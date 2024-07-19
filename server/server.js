@@ -11,7 +11,7 @@ var PORT = process.env.port || 5555;
 // Middleware setup
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000', // Adjust to your frontend's URL
+  origin: 'http://0.0.0.0:8080', // Adjust to your frontend's URL
   credentials: true
 }));
 
@@ -70,7 +70,9 @@ app.post('/api/signUp', (req, res) => {
 
 
 
-
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
 
 
